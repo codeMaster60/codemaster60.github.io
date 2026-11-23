@@ -77,11 +77,6 @@
         "label": "View resume ↗",
         "url": "assets/ASaiJayanth_Resume.pdf",
         "primary": false
-      },
-      {
-        "label": "Film portfolio ↗",
-        "url": "https://codemaster60.github.io/director/",
-        "primary": false
       }
     ],
     "now": [
