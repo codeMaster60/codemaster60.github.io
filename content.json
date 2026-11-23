@@ -1,0 +1,276 @@
+{
+  "site": {
+    "pageTitle": "Sai Jayanth · Product Manager & Filmmaker",
+    "description": "Allumolu Sai Jayanth: product manager (0 to 1, product analytics, AI) and filmmaker. I build products the way I make films.",
+    "brand": "Sai Jayanth",
+    "resume": "assets/ASaiJayanth_Resume.pdf",
+    "navResumeLabel": "Resume",
+    "footer": "© 2026 Allumolu Sai Jayanth"
+  },
+  "nav": [
+    { "label": "Experience", "target": "experience" },
+    { "label": "Case studies", "target": "case-studies" },
+    { "label": "Projects", "target": "projects" },
+    { "label": "Film", "target": "film" }
+  ],
+  "sections": [
+    { "id": "why", "label": "Why I do this", "show": true },
+    { "id": "experience", "label": "Experience", "show": true },
+    { "id": "case-studies", "label": "Case studies", "show": true },
+    { "id": "projects", "label": "Projects", "show": true },
+    { "id": "exploring", "label": "Exploring", "show": true },
+    { "id": "skills", "label": "Skills", "show": true },
+    { "id": "film", "label": "Behind the camera", "show": true }
+  ],
+  "hero": {
+    "eyebrow": "Product Manager · Filmmaker",
+    "name": "Sai Jayanth",
+    "line": "I build products the way I make films.",
+    "summary": "Honestly, they’re the same job: figure out what the person on the other side needs, then cut everything that doesn’t help them. I’ve helped take a product from nothing to live operations, dug through 885K events to see where users quit, and I run my own film studio on the side.",
+    "buttons": [
+      { "label": "See my work", "url": "#case-studies", "primary": true },
+      { "label": "View resume ↗", "url": "assets/ASaiJayanth_Resume.pdf", "primary": false },
+      { "label": "Film portfolio ↗", "url": "https://codemaster60.github.io/director/", "primary": false }
+    ],
+    "now": [
+      { "bold": "Founder", "text": "FrameFlash Productions" },
+      { "bold": "President", "text": "Bioscope · VIT-AP's film club" },
+      { "bold": "B.Tech CSBS", "text": "VIT-AP '27" }
+    ],
+    "reelPhotos": ["assets/cipher.jpg", "assets/grey.jpg", "assets/prod2.jpg"]
+  },
+  "why": {
+    "heading": "Every frame is *a decision*",
+    "paragraphs": [
+      "Filmmaking taught me one thing early: the audience always knows. If a shot doesn’t belong, they feel it, even if they can’t say why. So every frame has to earn its place.",
+      "Products are no different. A good product is just a set of decisions where each one is there because the user needed it. That’s the part I love most about product work: finding the one problem that really matters, checking it against the data, and cutting until only what works is left.",
+      "So I do both. Films keep me close to how people feel. Products keep me honest about what they actually do."
+    ],
+    "quote": "“I storyboard features before I build them, and I edit roadmaps the way I edit a film.”",
+    "quoteCaption": "How I work"
+  },
+  "experience": {
+    "heading": "Where I've *shipped*",
+    "jobs": [
+      {
+        "company": "OnlyClick",
+        "role": "Founder's Office · Product Manager Intern",
+        "when": "2025 – 2026",
+        "stats": [
+          { "value": "~₹50K", "text": "pilot-stage revenue, taking the venture from 0 to 1" },
+          { "value": "40–60%", "text": "potential fulfilment-cost savings identified" }
+        ],
+        "bullets": [
+          "Joined an early-stage consumer-services startup and helped take it ==from setup to live operations==, and to about ==₹50K in pilot revenue==.",
+          "Compared costs across the big delivery platforms and found a possible ==40–60% saving on fulfilment==, just by batching scheduled deliveries and planning smarter routes.",
+          "Sat between users, ops and product. Whenever something broke for a customer or the team, I turned it into a fix in how we worked.",
+          "Helped plug AI into our internal dashboards, so the team could find what they needed without digging through sheets."
+        ],
+        "tags": ["0 → 1", "Unit economics", "Cost optimisation", "Problem discovery", "AI in product"]
+      }
+    ]
+  },
+  "caseStudies": {
+    "heading": "Product calls, *worked end to end*",
+    "sub": "Each one starts with a real problem someone has, picks one number that would prove the fix worked, and ends with something you can actually click.",
+    "items": [
+      {
+        "kind": "Fintech · Activation · Groww",
+        "badge": "Live prototype",
+        "badgeStyle": "gold",
+        "featured": true,
+        "title": "Day Zero for Groww",
+        "rows": [
+          { "label": "Problem", "text": "You finish KYC on Groww, you’re excited to invest, and then you wait up to a day with nothing to do. That’s exactly when people lose interest." },
+          { "label": "Solution", "text": "Let people plan their first investment while the account is being activated. When it goes live, they confirm it in one tap." },
+          { "label": "Guardrails", "text": "No recommendations, nothing runs on its own, and no F&O or margin. It should help people start, not push them." }
+        ],
+        "metricValue": "72 hrs",
+        "metricText": "The number I’d watch: how many newly activated users invest within 72 hours, tested 50/50 against the current flow",
+        "links": [
+          { "label": "Try the prototype ↗", "url": "https://codemaster60.github.io/groww-day-zero-prototype/" },
+          { "label": "Code ↗", "url": "https://github.com/codeMaster60/groww-day-zero-prototype" }
+        ]
+      },
+      {
+        "kind": "Fintech · Product analytics · PRD",
+        "badge": "Synthetic data",
+        "badgeStyle": "outline",
+        "featured": false,
+        "title": "Investly: from signup to first investment",
+        "rows": [
+          { "label": "Question", "text": "Where do people drop off between signing up and their first mutual fund investment, and what should the team test next?" },
+          { "label": "Found", "text": "Only ==9.0%== of signups ever invested. The biggest leak is between looking at a fund and starting to invest (35.5%), and 31% of people who started never finished." },
+          { "label": "Recommended", "text": "Nudge people in their first week, recover failed checkouts, A/B test SIP projections, and move spend to referrals, which bring in investors at ₹849 each." }
+        ],
+        "metricValue": "",
+        "metricText": "",
+        "links": [
+          { "label": "Read the analysis ↗", "url": "https://github.com/codeMaster60/investment-app-funnel-analysis" }
+        ]
+      },
+      {
+        "kind": "AI tool · Film production · Bioscope",
+        "badge": "Built",
+        "badgeStyle": "gold",
+        "featured": false,
+        "title": "ShotList: from scene to shoot day",
+        "rows": [
+          { "label": "Problem", "text": "Student filmmakers lose days turning a script into a shot list, a call sheet and a budget. Most just skip it, and then the shoot day falls apart." },
+          { "label": "Solution", "text": "Paste a scene and get a shot list, a call sheet and a rough budget in a minute. You edit it, export it, and you’re ready to shoot." },
+          { "label": "Who uses it", "text": "Built for and tested with members of Bioscope, VIT-AP’s film club." }
+        ],
+        "metricValue": "WAU",
+        "metricText": "The one number I track: weekly active filmmakers, meaning how many come back and use it every week",
+        "links": [
+          { "label": "Try the tool ↗", "url": "#" },
+          { "label": "Code ↗", "url": "#" }
+        ]
+      }
+    ],
+    "soonHeading": "Coming *soon*",
+    "soonSub": "I’m working on these right now. Each will have personas, the user journey, a North Star, feature ideas with mockups, and how I’d measure them.",
+    "soon": [
+      { "company": "Netflix", "title": "Help viewers pick something to watch in under a minute", "tags": ["Choice overload", "Personalisation", "Time-to-play"] },
+      { "company": "Spotify India", "title": "Turn free listeners into paying subscribers", "tags": ["Monetisation", "Pricing", "Conversion funnel"] },
+      { "company": "Instagram", "title": "Help small creators win their first 1,000 followers", "tags": ["Creator growth", "Discovery", "Retention"] },
+      { "company": "CRED", "title": "Give members a reason to open the app when no bill is due", "tags": ["Engagement", "Habit loops", "Rewards economics"] }
+    ]
+  },
+  "projects": {
+    "heading": "Things I've *built & analysed*",
+    "sub": "A few I'm proud of. Tap one to see the problem, what I did and how it turned out.",
+    "items": [
+      {
+        "kind": "AI · Agentic commerce · Razorpay AI Buildathon",
+        "title": "Kirana Shop",
+        "summary": "A shop owner photographs his shelf, and his shop becomes searchable and buyable by an AI agent. No money moves until he confirms the item is in stock.",
+        "metricValue": "~2 min",
+        "metricText": "from shelf photos to an AI-buyable catalogue",
+        "details": [
+          { "label": "Problem", "text": "You can ask an AI assistant to order biscuits from Blinkit. You can’t ask it to order from the kirana shop down your street. UPI already works there. The problem is that the shop’s stock doesn’t exist anywhere a computer can read." },
+          { "label": "Approach", "text": "Shelf photos go to Gemini vision, which writes the catalogue. A buyer asks in plain language and the agent resolves it against the catalogue, handling brands, misspellings and plurals. Before any payment, the owner confirms the item is actually on the shelf." },
+          { "label": "Outcome", "text": "A working prototype for Track 01 (AI Growth & Agentic Commerce): discovery, cataloguing and owner-approved payments, with an append-only audit log and 35 test inputs run through the full flow." },
+          { "label": "What I did", "text": "Worked out why nobody had solved this yet (Razorpay has the payments, Google knows where the shop is, nobody knows what’s on the shelf), designed the flow, built it, and fixed a nasty bug where the agent said “we don’t have it” and then suggested the very same item." }
+        ],
+        "links": [
+          { "label": "View project ↗", "url": "https://github.com/codeMaster60/agentic-local-commerce#readme" },
+          { "label": "Code ↗", "url": "https://github.com/codeMaster60/agentic-local-commerce/tree/main" }
+        ]
+      },
+      {
+        "kind": "Feature prototype · Mobility · Rapido",
+        "title": "Rapido Trip Chaining",
+        "summary": "Book a train ticket in Rapido, and the ride to the station is offered in the same flow, timed to reach 20 minutes before departure. Even when the ticket is for someone else.",
+        "metricValue": "Live",
+        "metricText": "clickable end-to-end prototype",
+        "details": [
+          { "label": "Problem", "text": "Booking a train and getting to the station are two separate jobs today, so the ride gets planned at the last minute, often in another app. When the ticket is for a parent, nobody arranges their ride at all." },
+          { "label": "Approach", "text": "Once the ticket is confirmed, Rapido proposes a bike pickup timed to the departure. If the ticket is for someone else, it asks for their pickup address instead of assuming it, and texts the captain’s details to them directly. Both legs then sit together as one trip in My Rides." },
+          { "label": "Outcome", "text": "A working prototype covering review and pay, ticket confirmation, the chained pickup for yourself or someone else, and the multi-leg trip view, with a guided “watch it work” mode." },
+          { "label": "What I did", "text": "Noticed the gap between booking a ticket and actually getting to the station, designed the flow (including the case where you’re booking for your mom), and built the prototype." }
+        ],
+        "links": [
+          { "label": "Try the prototype ↗", "url": "https://codemaster60.github.io/rapido-trip-chaining-prototype/" },
+          { "label": "Code ↗", "url": "https://github.com/codeMaster60/rapido-trip-chaining-prototype" }
+        ]
+      },
+      {
+        "kind": "Product analytics · SQL · E-commerce",
+        "title": "Funnel & Retention Analysis",
+        "summary": "The view → cart → purchase funnel, weekly retention cohorts and price-tier segments, built on real store data.",
+        "metricValue": "885K",
+        "metricText": "real events · 5.24% view-to-purchase",
+        "details": [
+          { "label": "Problem", "text": "Product teams need to know where users drop off, how well new users come back, and which segments matter, often before they have a production analytics setup." },
+          { "label": "Approach", "text": "Loaded 885,129 real events (view, cart, purchase) from a public electronics-store dataset covering five months, then used SQL in DuckDB to build the funnel, weekly retention cohorts, a 7-day activation rate and price-tier segments." },
+          { "label": "Outcome", "text": "View to cart 9.08%, cart to purchase 57.65%, 7-day activation 5.00%. Weekly cohorts of 7,700–21,000 new users fall to 400–600 by week 1. Premium items sell almost as often as mid-priced ones at about 6× the order value." },
+          { "label": "What I did", "text": "Picked the questions, wrote the SQL and Python, made the charts, and boiled it all down to one call: fix onboarding and the first week before anything else." }
+        ],
+        "links": [
+          { "label": "View project ↗", "url": "https://github.com/codeMaster60/ecommerce-funnel-retention-analysis#readme" },
+          { "label": "Code ↗", "url": "https://github.com/codeMaster60/ecommerce-funnel-retention-analysis/tree/main/scripts" }
+        ]
+      },
+      {
+        "kind": "AI analytics · Customer insights",
+        "title": "Feedback Intelligence",
+        "summary": "Turns messy Play Store reviews for Swiggy and PhonePe into a ranked, developer-ready list of what to fix first.",
+        "metricValue": "1,600",
+        "metricText": "reviews → 25 issues · 122.5× error spike behind the top one",
+        "details": [
+          { "label": "Problem", "text": "Feedback is scattered across reviews and tickets, with no systematic way to separate signal from noise or connect it to what is actually breaking in production." },
+          { "label": "Approach", "text": "Scraped 1,600 real reviews, classified them with an LLM, clustered duplicates with TF-IDF and K-Means, checked each cluster against backend error data (synthetic), and ranked issues with a transparent weighted score." },
+          { "label": "Outcome", "text": "About 300 actionable reviews collapsed into 25 issues. Payment-fraud and duplicate-charge complaints matched a 122.5× spike in payment errors, the top priority, followed by checkout refunds at 93×." },
+          { "label": "What I did", "text": "Built the whole pipeline and a scoring formula anyone can follow, so every priority has a clear reason behind it. It also writes up issue reports for the top five." }
+        ],
+        "links": [
+          { "label": "View project ↗", "url": "https://github.com/codeMaster60/app-review-feedback-analyzer#readme" },
+          { "label": "Code ↗", "url": "https://github.com/codeMaster60/app-review-feedback-analyzer/tree/main/scripts" }
+        ]
+      }
+    ],
+    "allLabel": "View all projects on GitHub",
+    "allUrl": "https://github.com/codeMaster60?tab=repositories"
+  },
+  "exploring": {
+    "heading": "Questions I'm *thinking about*",
+    "sub": "Open product questions I keep coming back to. Two come straight from the world I know best: the movies.",
+    "items": [
+      { "area": "Streaming · Retention", "status": "In progress", "question": "Why do viewers abandon a film in its first ten minutes on OTT, and what should a platform measure instead of views?", "why": "Views reward the click, not the film. A better North Star could change what gets made and recommended.", "tags": ["North Star design", "Retention curves", "Behavioural economics"] },
+      { "area": "Cinema · Growth", "status": "In progress", "question": "How could BookMyShow bring people back to theatres for mid-budget films?", "why": "Big releases still fill halls while mid-budget films wait for OTT. That gap is a demand problem, and product can move it.", "tags": ["Adoption growth", "User segmentation", "Pricing experiments"] },
+      { "area": "Quick commerce · Economics", "status": "In progress", "question": "Can a ₹200 quick-commerce basket ever make money?", "why": "Ten-minute delivery is loved and expensive. I want to find the order size, batching and density where it pays for itself.", "tags": ["Unit economics", "KPI tree", "Cost optimisation"] },
+      { "area": "AI · EdTech", "status": "In progress", "question": "What should the North Star be for an AI speaking coach, and what kills activation in week one?", "why": "People download language apps feeling brave and quit the first time they feel judged. Activation is an emotional problem as much as a funnel.", "tags": ["Metric design", "Activation funnel", "A/B test plan"] }
+    ]
+  },
+  "skills": {
+    "heading": "What I *bring*",
+    "groups": [
+      { "title": "Product", "items": ["Product strategy", "Problem framing", "KPI tree structuring", "North Star metric design", "Adoption growth strategy", "Cost optimisation strategy", "Unit economics thinking"] },
+      { "title": "Execution", "items": ["0 → 1 MVP execution", "PRD writing", "Feature prioritisation", "Cross-functional collaboration", "Roadmapping"] },
+      { "title": "Metrics & experimentation", "items": ["Metric design", "Data-driven decision making", "Experimentation framework", "A/B testing"] },
+      { "title": "User & behaviour insight", "items": ["User segmentation", "User research", "Behavioural economics application"] },
+      { "title": "Automation · n8n", "items": ["n8n workflow automation", "Automation agent design"] },
+      { "title": "Tools", "items": ["Google Workspace", "JIRA", "Excel", "PowerPoint", "SQL"] }
+    ],
+    "chipGroups": [
+      { "title": "Also working with", "items": ["AI product development", "Agentic workflows", "Prompt engineering", "LLM evaluation", "Human-in-the-loop design", "Go-to-market", "JTBD", "Journey mapping", "Cohort analysis"] },
+      { "title": "Other tools", "items": ["Mixpanel", "Amplitude", "PostHog", "Power BI", "Notion", "Linear", "Figma", "Miro", "Make", "Zapier", "Lovable", "Postman", "GitHub", "Vercel"] }
+    ]
+  },
+  "film": {
+    "heading": "The other *half of me*",
+    "intro": "When I’m not working on products, I’m making films with FrameFlash Productions, my own studio, or running Bioscope, VIT-AP’s film club. Honestly, making a film is product work with a camera: a small team, a tight budget, a hard deadline, and an audience that decides in seconds whether it cares.",
+    "bridge": [
+      { "title": "Audience *first*", "text": "A film fails when the audience stops caring. A product fails when the user does." },
+      { "title": "Storyboard = *prototype*", "text": "I plan every shot before the camera rolls, the way I prototype before anything gets built." },
+      { "title": "The edit = *prioritisation*", "text": "Cutting a good scene to make a better film is the same call as cutting a good feature to ship a better product." }
+    ],
+    "films": [
+      { "title": "“Cipher”", "meta": "Thriller · 11 min", "goldMeta": false, "url": "https://www.youtube.com/watch?v=5REUF6cl-2A", "image": "assets/cipher.jpg" },
+      { "title": "“Grey”", "meta": "2nd prize · VIT-AP Film Festival", "goldMeta": true, "url": "https://www.youtube.com/watch?v=0dxm-48dRm0", "image": "assets/grey.jpg" },
+      { "title": "“Production No. 2”", "meta": "In post-production", "goldMeta": false, "url": "https://www.youtube.com/watch?v=AIKzFAr-pfs", "image": "assets/prod2.jpg" }
+    ],
+    "club": "**President of Bioscope**, VIT-AP's filmmaking club: ==400+ members== and ==5+ grand events== conducted by me, including a film festival I organised.",
+    "timeline": [
+      { "text": "Member 2023–25", "current": false },
+      { "text": "Secretary · Jun 2025", "current": false },
+      { "text": "President · Jun 2026", "current": true }
+    ],
+    "buttonLabel": "Enter the film portfolio ↗",
+    "buttonUrl": "https://codemaster60.github.io/director/"
+  },
+  "contact": {
+    "heading": "Let's *build something*",
+    "sub": "I’m looking for product and growth roles. Email or call me, that’s the fastest way to reach me.",
+    "links": [
+      { "label": "Email", "value": "jayanthallumolu@gmail.com", "url": "mailto:jayanthallumolu@gmail.com" },
+      { "label": "Phone", "value": "+91 72078 15313", "url": "tel:+917207815313" },
+      { "label": "LinkedIn", "value": "A. Sai Jayanth", "url": "https://www.linkedin.com/in/asaijayanth" },
+      { "label": "X (Twitter)", "value": "@jayanth_a58583", "url": "https://x.com/jayanth_a58583" },
+      { "label": "GitHub", "value": "codeMaster60", "url": "https://github.com/codeMaster60" }
+    ],
+    "education": "**B.Tech, Computer Science & Business Systems** · VIT-AP University · 2023 – 2027",
+    "educationButton": "View resume ↗"
+  }
+}
