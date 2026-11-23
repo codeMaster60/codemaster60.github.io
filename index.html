@@ -68,6 +68,7 @@ em { font-style: italic; color: var(--gold); font-weight: 400; }
 .btn:hover { background: var(--ivory); border-color: var(--ivory); color: var(--ink); }
 .now { margin-top: 34px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; font-size: 11.5px; letter-spacing: .08em; color: var(--dim); }
 .now b { color: var(--ivory); font-weight: 600; }
+.now .sep { font-style: normal; }
 .now > span::before { content: "●"; color: var(--gold); font-size: 7px; vertical-align: 2px; margin-right: 8px; }
 
 /* sprocket divider, a quiet nod to film between sections */
@@ -238,7 +239,7 @@ section.block { padding: 96px 0 30px; scroll-margin-top: 60px; }
 .sk li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: #e4ddd2; display: flex; align-items: center; gap: 12px; }
 .sk li::before { content: ""; width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex: none; }
 /* Education + resume line */
-.edu-line { margin: 30px auto 0; max-width: 980px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; text-align: left; padding: 18px 22px; border: 1px solid var(--line); font-size: 14px; color: var(--dim); }
+.edu-line { margin: 30px auto 0; max-width: 980px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; padding: 18px 22px; border: 1px solid var(--line); font-size: 14px; color: var(--dim); }
 .edu-line b, .edu-line strong { color: var(--ivory); font-weight: 600; }
 @media (max-width: 1000px) { .done, .soon { grid-template-columns: 1fr 1fr; } .skills { grid-template-columns: 1fr 1fr !important; } }
 @media (max-width: 680px) { .done, .soon, .grid { grid-template-columns: 1fr; } .skills { grid-template-columns: 1fr !important; } .all span { font-size: 21px; } }
@@ -320,6 +321,47 @@ footer { text-align: center; font-size: 12px; color: var(--dim); padding: 0 0 40
   .paper { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } .bars { display: none; } }
+
+/* ================= Mobile: a film strip you swipe, not a stack of boxes ================= */
+.chap, .rail { display: none; }
+@media (max-width: 680px) {
+  /* hero keeps the laptop look, just sized for a phone */
+  .title { padding: 70px 20px 60px; }
+  .cta .btn { padding-left: 16px; padding-right: 16px; }
+  /* swipeable strips */
+  .done, .soon, .grid, .cases {
+    display: flex !important; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    margin: 0 -22px; padding: 2px 22px 4px; scroll-padding: 0 22px;
+  }
+  .done::-webkit-scrollbar, .soon::-webkit-scrollbar, .grid::-webkit-scrollbar, .cases::-webkit-scrollbar { display: none; }
+  .done > *, .soon > *, .grid > *, .cases > * { flex: 0 0 86%; min-width: 0; scroll-snap-align: start; }
+  .grid { align-items: flex-start; }
+  .proj.open { grid-column: auto; }
+  .soon > * { flex-basis: 74%; }
+
+  /* frame counter + progress under each strip */
+  .rail { display: flex; align-items: center; gap: 14px; margin: 14px 0 0; font-size: 10.5px; font-weight: 800; letter-spacing: .18em; color: var(--dim); }
+  .rail .ct { color: var(--ivory); min-width: 52px; }
+  .rail .ct b { color: var(--gold); font-weight: 800; }
+  .rail .tk { flex: 1; height: 2px; background: rgba(239,232,220,.12); position: relative; overflow: hidden; }
+  .rail .tk i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gold); transition: transform .3s, width .3s; }
+  .rail .sw { text-transform: uppercase; transition: opacity .4s; }
+  .rail.moved .sw { opacity: 0; }
+
+  /* films: big 16:9 frames */
+  .film-wrap { grid-template-columns: minmax(0, 1fr) !important; }
+  .film-wrap > * { min-width: 0; }
+  .film > div > span { white-space: normal; }
+
+  /* contact: email wide, the rest two by two */
+  .contact { grid-template-columns: 1fr 1fr !important; gap: 8px; }
+  .contact a:first-child { grid-column: 1 / -1; }
+  .contact a { padding: 14px; }
+  .contact b { font-size: 13.5px; }
+  .contact-block { padding: 90px 0 56px; }
+  .edu-line { padding: 18px 16px; flex-direction: column; align-items: center; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -328,6 +370,7 @@ footer { text-align: center; font-size: 12px; color: var(--dim); padding: 0 0 40
 <nav class="nav">
   <div class="wrap">
     <a class="me" href="#top" data-r="brand"></a>
+    <span class="chap" id="chap" aria-hidden="true"></span>
     <ul data-r="nav"></ul>
   </div>
 </nav>
@@ -438,7 +481,7 @@ footer { text-align: center; font-size: 12px; color: var(--dim); padding: 0 0 40
     var h = C.hero || {};
     document.querySelector('[data-r="hero"]').innerHTML = '<div class="eyebrow">' + esc(h.eyebrow) + '</div><h1>' + esc(h.name) + '</h1><p class="line">' + fmt(h.line) + '</p>' +
       '<p class="lead">' + fmt(h.summary) + '</p><div class="cta">' + list(h.buttons).filter(function (b) { return b.label; }).map(function (b) { return '<a class="btn' + (b.primary ? ' primary' : '') + '" href="' + url(b.url) + '">' + esc(b.label) + '</a>'; }).join('') + '</div>' +
-      '<div class="now">' + list(h.now).map(function (x) { return '<span><b>' + esc(x.bold) + '</b>' + (x.text ? ', ' + fmt(x.text) : '') + '</span>'; }).join('') + '</div>';
+      '<div class="now">' + list(h.now).map(function (x) { return '<span><b>' + esc(x.bold) + '</b>' + (x.text ? '<i class="sep">, </i>' + fmt(x.text) : '') + '</span>'; }).join('') + '</div>';
     var n = 0, out = '';
     list(C.sections).forEach(function (sec) {
       var key = sec.id === 'case-studies' ? 'caseStudies' : sec.id;
@@ -473,8 +516,47 @@ footer { text-align: center; font-size: 12px; color: var(--dim); padding: 0 0 40
     });
     /* links that leave the page (and the resume) open in a new tab */
     document.querySelectorAll('a[href^="http"], a[href$=".pdf"]').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+    rails(); chapters();
   }
 
+
+  /* Mobile: counters under swipe strips, and the chapter marker in the top bar */
+  var mq = window.matchMedia('(max-width: 680px)');
+  function rails() {
+    document.querySelectorAll('.rail').forEach(function (r) { r.remove(); });
+    if (!mq.matches) return;
+    document.querySelectorAll('.done, .soon, .grid, .cases').forEach(function (strip) {
+      var items = strip.children, n = items.length; if (n < 2) return;
+      var r = document.createElement('div'); r.className = 'rail'; r.setAttribute('aria-hidden', 'true');
+      r.innerHTML = '<span class="ct"><b>01</b> / ' + (n < 10 ? '0' : '') + n + '</span><span class="tk"><i style="width:' + (100 / n) + '%"></i></span><span class="sw">Swipe →</span>';
+      strip.parentNode.insertBefore(r, strip.nextSibling);
+      var b = r.querySelector('b'), bar = r.querySelector('i'), raf = 0;
+      strip.addEventListener('scroll', function () {
+        if (raf) return; raf = requestAnimationFrame(function () {
+          raf = 0;
+          var max = strip.scrollWidth - strip.clientWidth, f = max > 0 ? strip.scrollLeft / max : 0, i = Math.min(n - 1, Math.round(f * (n - 1)));
+          b.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+          bar.style.transform = 'translateX(' + (f * (n - 1) * 100) + '%)';
+          if (strip.scrollLeft > 8) r.classList.add('moved');
+        });
+      }, { passive: true });
+    });
+  }
+  var chapIO;
+  function chapters() {
+    var chap = document.getElementById('chap'); if (!chap || !('IntersectionObserver' in window)) return;
+    if (chapIO) chapIO.disconnect();
+    chapIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var lab = e.target.querySelector('.head .label');
+        if (lab) { var nEl = lab.querySelector('.n'); chap.innerHTML = '<b>' + (nEl ? nEl.textContent : '') + '</b>' + lab.textContent.replace(nEl ? nEl.textContent : '', ''); chap.classList.add('on'); }
+        else chap.classList.remove('on');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section.block, .contact-block, .hero').forEach(function (s) { chapIO.observe(s); });
+  }
+  if (mq.addEventListener) mq.addEventListener('change', rails);
   /* Reveal and skill bars (everything is visible before this runs) */
   function reveal() {
     if (!('IntersectionObserver' in window) || reduce) return;
