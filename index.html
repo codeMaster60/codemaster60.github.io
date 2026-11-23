@@ -239,7 +239,7 @@ section.block { padding: 96px 0 30px; scroll-margin-top: 60px; }
 .sk li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: #e4ddd2; display: flex; align-items: center; gap: 12px; }
 .sk li::before { content: ""; width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex: none; }
 /* Education + resume line */
-.edu-line { margin: 30px auto 0; max-width: 980px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; padding: 18px 22px; border: 1px solid var(--line); font-size: 14px; color: var(--dim); }
+.edu-line { margin: 30px auto 0; max-width: 980px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; text-align: left; padding: 18px 22px; border: 1px solid var(--line); font-size: 14px; color: var(--dim); }
 .edu-line b, .edu-line strong { color: var(--ivory); font-weight: 600; }
 @media (max-width: 1000px) { .done, .soon { grid-template-columns: 1fr 1fr; } .skills { grid-template-columns: 1fr 1fr !important; } }
 @media (max-width: 680px) { .done, .soon, .grid { grid-template-columns: 1fr; } .skills { grid-template-columns: 1fr !important; } .all span { font-size: 21px; } }
